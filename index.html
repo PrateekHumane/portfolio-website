@@ -1,0 +1,755 @@
+
+<html><head><script>
+function menuToggle(x) {
+    x.classList.toggle("toggle");
+	document.getElementById("full_page").classList.toggle("page_menu");
+	document.getElementById("menu_options").classList.toggle("expand");
+	document.getElementById("menu_options_table").classList.toggle("visible");
+}
+</script>
+
+<style>
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    background-image: url("images/banner_scaled.jpg");
+	font-family: "Courier New", Courier, monospace;
+	
+	background-size: cover;
+	background-attachment: fixed;
+	margin: 0 0 0 0;
+
+}
+
+.banner {
+#    background-image: url("images/banner_n.jpg");
+    height: 80%;
+    padding-top: 23%;
+	width: 100 %;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+	z-index:0;
+}
+.banner-text h1{
+	position: absolute;
+	overflow: hidden;
+	white-space: nowrap;
+
+#	top: 40%;
+	left: 29.5%;
+	border-right: .15em solid white;
+	color:white;	
+	font-family: "Courier New", Courier, monospace;
+	font-size:3em;
+	font-size:3.5vw;
+	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+	letter-spacing: .15em; /* Adjust as needed */
+	animation: 
+		typing 1.5s steps(20, end),
+		blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 40%;border-color: transparent }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+#subheading{
+	overflow: hidden;
+	position:absolute;
+	color:white;	
+	font-family: "Courier New", Courier, monospace;
+	font-size:2vw;
+	text-align:center;
+	width:100%;
+	margin-top:12vh;
+}
+
+.down_arrow {
+	margin:auto;
+	display:block;
+	width:40;
+	cursor:pointer;
+}
+
+#title_arrow{
+	margin:40vh auto 0 auto;
+	animation:arrow_bounce .5s linear infinite alternate;
+}
+
+@keyframes arrow_bounce {
+	from { 
+		margin-top:40vh;	
+	}
+	to { 
+		margin-top:42vh;
+	}
+}
+
+.banner p{
+	position:absolute;
+	margin:46vh auto 0 auto;
+	color:white;
+	cursor:pointer;
+	width:100%;
+	text-align:center;
+}
+
+.menuBars {
+    //display: inline-block;
+    cursor: pointer;
+	position: absolute;
+	z-index: 4;
+	padding-left: 2%;
+	padding-top: 1%;
+	
+}
+.menuBars:hover .bar1 {
+    background-color: white
+}
+.menuBars:hover .bar2 {
+    background-color: white
+}
+.menuBars:hover .bar3 {
+    background-color: white
+}
+
+
+.bar1, .bar2, .bar3 {
+    width: 35px	;
+    height: 5px;
+    background-color: orange;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.toggle .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+    background-color: white;	
+}
+
+.toggle .bar2 {opacity: 0;}
+
+.toggle .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+    background-color: white;	
+}	
+
+
+
+/*.page {
+	animation-name:transition_page_back;
+	animation-duration: 0.6s;
+	background-color: orange;
+}
+
+@keyframes transition_page_back {
+    from {background-color: orange;}
+    to {background-color: transparent;}
+}*/
+
+tbody.collapse {
+    visibility: collapse;
+}
+
+tbody.expand {
+    visibility: visible;	
+}
+
+table.visible{
+	padding-top: 15%;
+}
+
+.menu_option {
+	color:white;
+	font-family:"Arial Black", Gadget, sans-serif;
+
+	font-size:2.5em;
+	letter-spacing: .15em; 
+	text-align:center;
+}
+
+.page_menu {
+//	position: absote;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+    top: 0;	
+	z-index: 3;
+	animation-name:transition_page;
+	animation-duration: 0.6s;
+	background-color: orange;
+
+}
+
+@keyframes transition_page {
+    from {background-color: transparent;}
+    to {background-color: orange;}
+}
+
+#about img{
+	padding: 5% 10% 5% 10%;
+	float:left;	
+}
+
+#about{
+	overflow: auto; 
+}
+
+#filters {
+ # background-color: white;
+	text-align: center;
+
+}
+
+.filter {
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 1%;
+  margin-right: 1%;
+  border: 2px solid orange; 
+  background-color: white;
+  cursor: pointer;
+  
+  color: orange;
+  font-weight: bold;
+  font-size: 1em;
+  
+	-webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+}
+
+.filter:hover {
+	background-color: orange; 
+    color: white;
+}
+
+.filter.active {
+	background-color: orange; 
+    color: white;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.container {
+	padding-top: 1%;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-bottom: 1%;
+	 line-height: 0 px;
+  -webkit-column-count: 3;
+  -webkit-column-gap:   10px;
+  -moz-column-count:    3;
+  -moz-column-gap:      10px;
+	column-count:         3;
+   column-gap:           20px;
+}
+.filterDiv {
+//	width: 32%;
+	margin-top: 2%;
+	width: 100%;
+	float:left;
+	display: none;
+	position: relative;
+}
+
+.show {
+	display: block;
+}
+
+.thumbnail {
+	width: 100%;
+}
+
+.thumbnail_title{
+	position: absolute; 
+	bottom: 0; 
+	background: rgba(0, 0, 0, 0.65); 
+	color: #f1f1f1; 
+	width: 92%;
+	color: white;
+	font-size: 1.5em;
+	font-size: 2vw;
+	padding: 4%;
+	text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: orange;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.filterDiv:hover .overlay{
+	height:100%;
+}
+
+.description {
+  color: white;
+  font-size: 1.3em;
+  font-size: 1.5vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay_container {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.overlay_description {
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+    margin-top: 2.5%;
+    margin-right: 5%;
+    margin-bottom: 2.5%;
+    background-color: rgba(255,255,255,0.95);
+	overflow-y:scroll;
+    overflow-x:hidden;
+}
+
+.overlay_description * {
+	margin-left:5%;
+}
+</style>
+</head><body><div id="full_page" class="page">
+<table align="center" id="menu_options_table">
+  <tbody id="menu_options" class="collapse">
+  <tr>
+	<td><a style="text-decoration:none"><h2 class="menu_option" style="cursor:pointer" onclick="document.getElementById('menu_button').classList.toggle('toggle');document.getElementById('full_page').classList.toggle('page_menu');document.getElementById('menu_options').classList.toggle('expand');document.getElementById('menu_options_table').classList.toggle('visible');">Home</h2></a></td>
+  </tr>
+  <tr>
+    <td><a style="text-decoration:none" onclick="document.getElementById('about').scrollIntoView();document.getElementById('menu_button').classList.toggle('toggle');document.getElementById('full_page').classList.toggle('page_menu');document.getElementById('menu_options').classList.toggle('expand');document.getElementById('menu_options_table').classList.toggle('visible');"><h2 class="menu_option"style="cursor:pointer"> About</h2></a></td>
+  </tr>
+  <tr>
+	<td><a  style="text-decoration:none" onclick="document.getElementById('projects_title').scrollIntoView();document.getElementById('menu_button').classList.toggle('toggle');document.getElementById('full_page').classList.toggle('page_menu');document.getElementById('menu_options').classList.toggle('expand');document.getElementById('menu_options_table').classList.toggle('visible');"><h2 class="menu_option"style="cursor:pointer">Projects</h2></a></td>
+  </tr>
+   </tbody>
+</table>
+</div>
+<div class="menuBars" onclick="menuToggle(this)" id="menu_button">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+<div class="banner">
+<div class="banner-text">
+<h1>Prateek Humane</h1>
+<h2 id="subheading">software developer and robotics enthusiast</h2>
+<!--<img src="images/arrow_down.png">-->
+</div>
+<p onclick="document.getElementById('projects_title').scrollIntoView();">see projects below...</p>
+<svg class="down_arrow" id="title_arrow" height="20" width"40" onclick="document.getElementById('about').scrollIntoView();">
+  <line x1="0" y1="0" x2="20" y2="20" style="stroke:white; stroke-width:3;"/>
+  <line x1="20" y1="20" x2="40" y2="0" style="stroke:white; stroke-width:3;"/>
+</svg>
+</div>
+<div id="white" style=" background-color: white">
+ 
+
+<div id = "about" style=" background-color: WhiteSmoke">
+<div style = "overflow: auto; ">
+<img src="images/about.jpg" alt="picture of myself" width="20%">
+<div style="padding-top:2.5%;padding-right:10%;font-size:3vh;">
+<h2>About Me</h2>
+<svg width="50" height="4">
+	<line x1="0" y1="0" x2="50" y2="0" style="stroke:orange; stroke-width:4;"/>
+</svg>
+<p>High School senior who enjoys programming and robotics</p>
+<p>I've been interested in computer science since a young age. It started with a way to explore my interest in computers.</p>
+<p>My interest in programming then grew into a love for creating, and engineering. I enjoy finding real world engineering applications for abstract physics and calculus concepts in code.</p>
+<p>Programming is more than just an individual experience, for me, part of my love for programming is attributed to being able to collaborate so closely with a team. Additionally, I teach computer science and robotics and I find this experience to be just as rewarding as programming itself. </p>
+</div>
+</div>
+<svg class="down_arrow" height="20" width"40" onclick="document.getElementById('projects_title').scrollIntoView();">
+  <line x1="0" y1="0" x2="20" y2="20" style="stroke:orange; stroke-width:3;"/>
+  <line x1="20" y1="20" x2="40" y2="0" style="stroke:orange; stroke-width:3;"/>
+</svg>
+</br>
+</div>
+
+<h2 style="text-align:center" id="projects_title">Projects</h2>
+
+<div id="filters">
+  <button class="filter active" onclick="filterSelection('favorites')">favorites</button>
+  <button class="filter" onclick="filterSelection('all')">all</button>
+  <button class="filter" onclick="filterSelection('websites')"> websites</button>
+  <button class="filter" onclick="filterSelection('robotics')">robotics</button>
+  <button class="filter" onclick="filterSelection('IOT')"> IOT</button>
+  <button class="filter" onclick="filterSelection('pi')">Raspberry Pi</button>
+  <button class="filter" onclick="filterSelection('FRC')"> FRC</button>
+  <button class="filter" onclick="filterSelection('OpenCv')"> OpenCV</button>
+</div>
+
+<div class="container">
+
+ <div class="filterDiv websites favorites show" onclick="overlayOn('aws')" style="cursor:pointer">
+	<img class="thumbnail" src="thumbnails/aws.jpg">
+	<div class="thumbnail_title">
+		AWS Zero Robotics auto-simulator
+	</div>
+ 	<div class="overlay">
+		<div class="description">
+			AWS - s3, route 53, python lambda function, api, and ses for automated ZR simulations
+		</div>
+	</div>
+  </div>
+
+  <div class="filterDiv robotics favorites show" onclick="overlayOn('ZR')" style="cursor:pointer">
+	<img class="thumbnail" src="thumbnails/ZR.jpg">
+	<div class="thumbnail_title">
+		Zero Robotics - ISS
+	</div>
+ 	<div class="overlay">
+		<div class="description">
+			Second Place internationally - Neural Networks, State Machines, Path Planning and Physics
+		</div>
+	</div>
+ </div>
+  
+  <div class="filterDiv robotics FRC pi"  onclick="overlayOn('driverstation')" style="cursor:pointer">
+	<img class="thumbnail" src="thumbnails/driverstation.jpg">
+	<div class="thumbnail_title">
+		Created custom control system from scratch
+	</div>
+	<div class="overlay">
+		<div class="description">
+			a control system which includes a large circuit for buttons, switches, knobs, screens etc. all wired to multiple arduinos and raspberry pi’s which communicated with each other. 
+		</div>
+	</div>
+  </div>
+
+  <div class="filterDiv robotics websites favorites show">
+	<img class="thumbnail" src="thumbnails/RobotFormations.jpg">
+	<div class="thumbnail_title">
+		Multi-Agent Robot Formations
+	</div>
+	<a href="http://www.stormingrobots.com/prod/mp/formation/index.html" target="_blank">
+	<div class="overlay">
+		<div class="description">
+			swarm robots form shapes with novel localization technique</br>(click to visit website)
+		</div>
+	</div>
+	</a>
+  </div>
+  
+  <div class="filterDiv robotics FRC OpenCv">
+  	<img class="thumbnail" src="thumbnails/stronghold.jpg">
+	<div class="thumbnail_title">
+		Stronghold Championship robot 
+	</div>
+	<div class="overlay">
+		<div class="description">
+			Final Round of International FRC tournament - Pnuematic catapult shooter with autonomous vision targeting 
+		</div>
+	</div>
+  </div>
+  
+  <div class="filterDiv robotics FRC OpenCv">
+	<img class="thumbnail" src="thumbnails/jetson.jpg">
+	<div class="thumbnail_title">
+		OpenCV w/ NVIDIA Jetson
+	</div>
+	<div class="overlay">
+		<div class="description">
+			Pick up object with OpenCV vision recognition linked with network tables.
+		</div>
+	</div>
+  </div>
+  
+  <div class="filterDiv robotics FRC">
+	<img class="thumbnail" src="thumbnails/rplidar.gif">  
+	<div class="thumbnail_title">
+		1d and 2d rotational Lidar interface with RoboRio
+	</div>
+	<div class="overlay">
+		<div class="description">
+			A Library to interface with either 2d or 1d lidar with the RoboRio 
+		</div>
+	</div>
+
+  </div>
+    <div class="filterDiv robotics pi">
+	<img class="thumbnail" src="thumbnails/ultrasonic.jpg">
+	<div class="thumbnail_title">
+		I2C Library for NXT sensors w/ Pi
+	</div>
+	<div class="overlay">
+		<div class="description">
+			A Library to interface with all standard NXT Sensors using a Raspberry Pi
+		</div>
+	</div>
+  </div>
+
+  <div class="filterDiv robotics pi">
+	<img class="thumbnail" src="thumbnails/turtlebot.jpg">  
+	<div class="thumbnail_title">
+		ROS Turtlebot maze navigation
+	</div>
+	<div class="overlay">
+		<div class="description">
+			Turtlebot navigation of maze using AMCL and SLAM with ROS
+		</div>
+	</div>
+  </div>
+  
+    <div class="filterDiv IOT pi OpenCv">
+	<img class="thumbnail" src="thumbnails/IR.jpg">
+	<div class="thumbnail_title">
+		IR reflector tracker
+	</div>
+	<div class="overlay">
+		<div class="description">
+			An IR camera surrounded by IR Leds to track a Universal Studios Harry Potter World Wand. Ultimately to turn off and on lights(not yet implemented)
+		</div>
+	</div>
+  </div>
+  
+  <div class="filterDiv pi IOT">
+	<img class="thumbnail" src="thumbnails/washingmachine.jpg">
+	<div class="thumbnail_title">
+		Washing machine alert system
+	</div>
+	<div class="overlay">
+		<div class="description">
+			Vibration sensor that tracks when the washing machine is done and alerts your phone
+		</div>
+	</div>
+  </div>
+ 
+  <div class="filterDiv websites">
+	<img class="thumbnail" src="thumbnails/portfolio.jpg">
+	<div class="thumbnail_title">
+		This website!
+	</div>
+	<div class="overlay">
+		<div class="description">
+			This website was designed and created entirely from scratch
+		</div>
+	</div>
+  </div>
+
+  <div class="filterDiv robotics FRC favorites OpenCv show" onclick="overlayOn('ros')" style="cursor:pointer">
+	<img class="thumbnail" src="thumbnails/ros.jpg">
+	<div class="thumbnail_title">
+		Wrote novel localization using vision and lidar with ROS
+	</div>
+	<div class="overlay">
+		<div class="description">
+			Used ROS to estimate robot position using lidar with linear regression and novel vision estimation algorithm. (Click to see code on Github)
+		</div>
+	</div>
+  </div>
+
+ 
+ </div>
+
+</div>
+
+<div class="overlay_container" id="ZR" onclick="overlayOff(this.id)">
+	<div class = "overlay_description">
+		</br>
+		<h1>Zero Robotics ISS finals - 2nd place (2017) & 4th place (2019)</h1>
+		<img src="images/zr/ZR-iss.jpg" width="30%	">
+		<h2>Djikstras Algorithm</h2>
+		<p>
+			Djikstras algorithm used for path planning. Debris approximated using polygons and verticies used as nodes for djikstras. Other attemmpts used grided nodes.
+		</p>
+		<img src="images/zr/polygon.jpg" width="30%	">
+		<p>
+			Weights for paths determined by estimated time to reach destination node, and damage paths would pose on SPHERE
+		</p>
+		<img src="images/zr/paths.jpg" width="30%	">
+		<h2>Physics and math</h2>
+		<p>
+			Physics and Linear Algebra to move and rotate SPHERE in space. Use of quaternions and/or euler angles for 3D rotation. 
+		</p>
+		<img src="images/zr/quats.jpg" width="30%	">
+		<p>
+			In hooking phase, relative translational and rotational velocities mantained to reduce imparted forces.
+		</p>
+		<img src="images/zr/torques.jpg" width="30%	">
+		<h2>Machine Learning</h2>
+		<p>
+			Neural network used to determine optimal PID values based on distance to move
+		</p>
+		<h2>State Machines</h2>
+		<p>
+			States and transitions to control the flow of the program. Transition from each phase of the game to complete tasks and movement. 
+		</p>
+	</div>
+</div>
+
+<div class="overlay_container" id="driverstation" onclick="overlayOff(this.id)">
+	<div class = "overlay_description">
+		</br>
+		<h1>Control system made entirely from scratch</h1>
+		<p>
+			Laser printed board anodized and assembled with 80-20. Contains numerous switches sliders and buttons wired to an arduino which emulates a joystick and communicates with two raspberry pi's which take input in from the touchscreens</br>
+		</p>
+		<img src="images/driverstation/1.png" width="30%	">
+		<img src="images/driverstation/2.png" width="30%	">
+		<img src="images/driverstation/3.png" width="30%	">
+		<img src="images/driverstation/4.png" width="30%	">
+		<img src="images/driverstation/5.png" width="30%	">
+		<img src="images/driverstation/6.png" width="30%	">
+	</div>
+</div>
+
+<div class="overlay_container" id="aws" onclick="overlayOff(this.id)">
+	<div class = "overlay_description">
+		<h1>Zero Robotics auto simulation website using AWS</h1>
+		<h3> auotmating the Zero Robotics simulation process </h3>
+		<h2>Static Website - S3</h2>
+		<p>
+			Static website created as a frontend for users to set up the simulations they want to test.</br>
+			Users input options such as their code, the options for simulating, the variables they want to track, and the number of times they want to simulate </br>
+			These options are packed into JSON data and Javascript and Jquery is used to send an http post with the payload</br>
+			This static website is uploaded to AWS S3 storage system</br>
+		</p>
+		<img src="images/aws/s3-staticwebsite.jpg" width="30%	">
+		<p>
+			Now it can be accessed publically and is stored securely on Amazon Servers</br></br>
+			Two buckets are made for the website to be accessed. </br>1) the name of the website address (zr-autosim.tk)</br>2) the name of the website address preceded by www (www.zr-autosim.tk) which points to the first bucket.
+		</p>
+		<img src="images/aws/s3-buckets.jpg" width="80%">
+		<h2>Domain name - route53</h2>
+		<p>
+			Route53 was used to redirect a domain name (with and without www.) to the website hosted on the s3 bucket.</br>
+		</p>
+		<img src="images/aws/route53.jpg" width="80%">
+		<p>
+			Nameservers were used to route domain to server ip
+		</p>
+		<h2>HTTP post JSON- API gateway</h2>
+		<p>
+			The simulation request is handled by Amazons API gateway.</br>
+			When the API is deployed, the gateway provides a link for the HTTP posts</br>
+		</p>
+		<img src="images/aws/api.jpg" width="80%">
+		<p>
+			The JSON data from the HTTP Post is then linked to the lambda function
+		</p>
+		<h2>Lambda Function</h2>
+		<p>
+			The lambda function is first fed the JSON data from the API.</br>
+		</p>
+		<img src="images/aws/lambda-overview.jpg" width="80%">
+		<p>
+			First by weeding through the network traffic, a simple simulation was mirrored using the python requests library</br>
+			Then I made a general class to run any Zero Robotics simulation</br>
+		</p>
+		<img src="images/aws/lambda-requests.jpg" width="80%">
+		<p>
+			Next I used the google sheets API and the google drive API to create a public sheet which will fill in the results of each simulation in real time</br>
+			Finally an email will be sent to the user with a link to the google sheet</br>
+		</p>
+		<h2>Return email - AWS SES</h2>
+		<p>
+			SES was set up to allow emails to be sent to any user with any email address.</br>
+			In the lambda function boto3 was included to take advantage of the SES and send emails from thequarkcharm@gmail.com</br>
+		</p>
+
+	</div>
+</div>
+
+<div class="overlay_container" id="ros" onclick="overlayOff(this.id)">
+	<div class = "overlay_description">
+		</br>
+		<h2>Localization and target movement for 2019 FRC competition</h2>
+		<p>
+			ROS used to localize the robot when near a goal as to drive up to the goal and place an object in the goal.
+			Below are images of possible goals and environments.
+		</p>
+		<img src="images/ros/hatch.jpg" >
+		<h3>Lidar</h3>		
+		<p>
+			Lidar data used to estimate a line in region of interest. Angle of line is used to adjust the camera (which is mounted on a servo) such that the camera is always facing the target.
+		</p>
+		<img src="images/ros/filter_scan.jpg" width="50%">
+		<h3>Vision</h3>		
+		<p>
+			OpenCV was used to find the correct tapes on the target.
+		</p>
+		<img src="images/ros/vision.jpg" width="30%">
+		<h3>Vision Estimation</h3>		
+		<h3>Transforms</h3>		
+		<img src="images/ros/rviz_full.jpg" width="30%">
+		<img src="images/ros/tf.jpg" width="30%">
+		<h3>Move base</h3>		
+		<img src="images/ros/robot.jpg" width="30%">
+		</br></br>
+		<a href="https://github.com/Team41Robotics/deep_space/tree/master/src" target="_blank">
+			Check out the code on github.
+		</a>
+		</br></br>
+	</div>
+</div>
+
+<script>
+var btns = document.getElementById("filters").getElementsByClassName("filter");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+filterSelection("favorites")
+function filterSelection(option) {
+  var x = document.getElementsByClassName("filterDiv");
+  if (option == "all") option = "";
+  for (var i = 0; i < x.length; i++) {
+    if ((x[i].className.indexOf(option) > -1 && x[i].className.indexOf("show") == -1) || (x[i].className.indexOf(option) == -1 && x[i].className.indexOf("show") > -1))
+		x[i].classList.toggle("show");
+  }
+}
+
+function overlayOn(projectName) {
+    document.getElementById(projectName).style.display = "block";
+}
+
+function overlayOff(projectName) {
+    document.getElementById(projectName).style.display = "none";
+}
+
+</script>
+
+</body></html>
