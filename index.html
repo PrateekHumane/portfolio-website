@@ -202,7 +202,7 @@ table.visible{
 }
 
 #about img{
-	padding: 5% 10% 5% 10%;
+	padding: 10% 10% 5% 10%;
 	float:left;	
 }
 
@@ -386,15 +386,16 @@ table.visible{
 <div id = "about" style=" background-color: WhiteSmoke">
 <div style = "overflow: auto; ">
 <img src="images/about.jpg" alt="picture of myself" width="20%">
-<div style="padding-top:2.5%;padding-right:10%;font-size:3vh;">
+<div style="padding-top:2.5%;padding-right:10%;font-size:2.8vh;">
 <h2>About Me</h2>
 <svg width="50" height="4">
 	<line x1="0" y1="0" x2="50" y2="0" style="stroke:orange; stroke-width:4;"/>
 </svg>
-<p>High School senior who enjoys programming and robotics</p>
-<p>I've been interested in computer science since a young age. It started with a way to explore my interest in computers.</p>
-<p>My interest in programming then grew into a love for creating, and engineering. I enjoy finding real world engineering applications for abstract physics and calculus concepts in code.</p>
-<p>Programming is more than just an individual experience, for me, part of my love for programming is attributed to being able to collaborate so closely with a team. Additionally, I teach computer science and robotics and I find this experience to be just as rewarding as programming itself. </p>
+<p>I’m a high school senior who enjoys programming and robotics.</p>
+<p>I’m passionate about computer science and its applications. More specifically, I enjoy writing algorithms and low level programming (im a big fan of c++!). I enjoy programming the nitty gritty aspects of a project. For example, writing code to handshake and synchronize communication over serial or radios. I always find it so exciting to put the concepts of calculus, physics, or even cs algorithms to practical use.</p>
+<p>Computer science is a concrete bridge between abstract concepts and ideas and their practical applications. Generally, robotics gives the most tangible representation of these concepts by directly linking cs with the physical world.</p>
+<p>Computer science is finding its way into almost all fields in an increasingly technology driven society, and I want to help bridge the gap to non-invasively make everyone's lives easier.
+CS is such a powerful tool, and I genuinely believe its a skillset that can help everyone. That’s why I dedicate so much of my time teaching programming to kids from elementary, to highschool.</p>
 </div>
 </div>
 <svg class="down_arrow" height="20" width"40" onclick="document.getElementById('projects_title').scrollIntoView();">
@@ -426,7 +427,7 @@ table.visible{
 	</div>
  	<div class="overlay">
 		<div class="description">
-			AWS - s3, route 53, python lambda function, api, and ses for automated ZR simulations
+			AWS - s3, route 53, python lambda function, api, and SES for automated ZR simulations
 		</div>
 	</div>
   </div>
@@ -476,15 +477,29 @@ table.visible{
 	</div>
 	<div class="overlay">
 		<div class="description">
-			Final Round of International FRC tournament - Pnuematic catapult shooter with autonomous vision targeting 
+			Final Round of International FRC tournament - Pneumatic catapult shooter with autonomous vision targeting 
 		</div>
 	</div>
   </div>
-  
+
+  <div class="filterDiv robotics FRC show">
+	<img class="thumbnail" src="thumbnails/state_table.jpg">
+	<div class="thumbnail_title">
+		Created a state machine for robot path planning
+	</div>
+	<a href="https://github.com/PrateekHumane/StateMachine-FRC2018" target="_blank">
+	<div class="overlay">
+		<div class="description">
+			states and transitions to prioritize paths given a state at any given time</br>(click to see the code on Github)
+		</div>
+	</div>
+	</a>
+  </div>
+
   <div class="filterDiv robotics FRC OpenCv">
 	<img class="thumbnail" src="thumbnails/jetson.jpg">
 	<div class="thumbnail_title">
-		OpenCV w/ NVIDIA Jetson
+		Implemented object targeting w/ OpenCV on NVIDIA Jetson
 	</div>
 	<div class="overlay">
 		<div class="description">
@@ -496,7 +511,7 @@ table.visible{
   <div class="filterDiv robotics FRC">
 	<img class="thumbnail" src="thumbnails/rplidar.gif">  
 	<div class="thumbnail_title">
-		1d and 2d rotational Lidar interface with RoboRio
+		1d and 2d rotational lidar interface with RoboRio
 	</div>
 	<div class="overlay">
 		<div class="description">
@@ -507,14 +522,16 @@ table.visible{
   </div>
     <div class="filterDiv robotics pi">
 	<img class="thumbnail" src="thumbnails/ultrasonic.jpg">
+	<a href="https://github.com/PrateekHumane/I2C-pi" target="_blank">
 	<div class="thumbnail_title">
 		I2C Library for NXT sensors w/ Pi
 	</div>
 	<div class="overlay">
 		<div class="description">
-			A Library to interface with all standard NXT Sensors using a Raspberry Pi
+			A wrapper library to interface with all standard NXT Sensors using a Raspberry Pi (click to see code on Github)
 		</div>
 	</div>
+	</a>
   </div>
 
   <div class="filterDiv robotics pi">
@@ -536,7 +553,7 @@ table.visible{
 	</div>
 	<div class="overlay">
 		<div class="description">
-			An IR camera surrounded by IR Leds to track a Universal Studios Harry Potter World Wand. Ultimately to turn off and on lights(not yet implemented)
+			An IR camera surrounded by IR LEDs to track a Universal Studios Harry Potter World Wand. Ultimately to turn off and on lights(not yet implemented)
 		</div>
 	</div>
   </div>
@@ -577,7 +594,6 @@ table.visible{
 	</div>
   </div>
 
- 
  </div>
 
 </div>
@@ -589,7 +605,7 @@ table.visible{
 		<img src="images/zr/ZR-iss.jpg" width="30%	">
 		<h2>Djikstras Algorithm</h2>
 		<p>
-			Djikstras algorithm used for path planning. Debris approximated using polygons and verticies used as nodes for djikstras. Other attemmpts used grided nodes.
+			Djikstras algorithm used for path planning. Debris approximated using polygons and vertices used as nodes for djikstras. Other attempts used gridded nodes.
 		</p>
 		<img src="images/zr/polygon.jpg" width="30%	">
 		<p>
@@ -598,11 +614,11 @@ table.visible{
 		<img src="images/zr/paths.jpg" width="30%	">
 		<h2>Physics and math</h2>
 		<p>
-			Physics and Linear Algebra to move and rotate SPHERE in space. Use of quaternions and/or euler angles for 3D rotation. 
+			Physics and Linear Algebra to move and rotate SPHERE in space. Use of quaternions and/or Euler angles for 3D rotation. 
 		</p>
 		<img src="images/zr/quats.jpg" width="30%	">
 		<p>
-			In hooking phase, relative translational and rotational velocities mantained to reduce imparted forces.
+			In hooking phase, relative translational and rotational velocities maintained to reduce imparted forces.
 		</p>
 		<img src="images/zr/torques.jpg" width="30%	">
 		<h2>Machine Learning</h2>
@@ -635,18 +651,23 @@ table.visible{
 <div class="overlay_container" id="aws" onclick="overlayOff(this.id)">
 	<div class = "overlay_description">
 		<h1>Zero Robotics auto simulation website using AWS</h1>
-		<h3> auotmating the Zero Robotics simulation process </h3>
+		<h3> automating the Zero Robotics simulation process</h3>
+		<a href="https://www.youtube.com/watch?v=Kc44dxa0FK8&list=PLv-dIWbYCeq7VlmmpI62xjq2x0M-VwvQq&index=5&t=4s" target="_blank"> checkout the talk I gave on making this portal </a>
+		<h3> Overall flow diagram </h3>
+		<img src="images/aws/flow.jpg" width="60%">
+		</br>
+		<h1>Process breakdown:</h2>
 		<h2>Static Website - S3</h2>
 		<p>
-			Static website created as a frontend for users to set up the simulations they want to test.</br>
+			Static website created as a front-end for users to set up the simulations they want to test.</br>
 			Users input options such as their code, the options for simulating, the variables they want to track, and the number of times they want to simulate </br>
 			These options are packed into JSON data and Javascript and Jquery is used to send an http post with the payload</br>
 			This static website is uploaded to AWS S3 storage system</br>
 		</p>
 		<img src="images/aws/s3-staticwebsite.jpg" width="30%	">
 		<p>
-			Now it can be accessed publically and is stored securely on Amazon Servers</br></br>
-			Two buckets are made for the website to be accessed. </br>1) the name of the website address (zr-autosim.tk)</br>2) the name of the website address preceded by www (www.zr-autosim.tk) which points to the first bucket.
+			Now it can be accessed publicly and is stored securely on Amazon Servers</br></br>
+			Two buckets are made for the website to be accessed. </br>1) the name of the website address (zr-autosim.tk)</br>2) the name of the website address preceded by www (www.zr-sim.tk) which points to the first bucket.
 		</p>
 		<img src="images/aws/s3-buckets.jpg" width="80%">
 		<h2>Domain name - route53</h2>
@@ -677,8 +698,8 @@ table.visible{
 		</p>
 		<img src="images/aws/lambda-requests.jpg" width="80%">
 		<p>
-			Next I used the google sheets API and the google drive API to create a public sheet which will fill in the results of each simulation in real time</br>
-			Finally an email will be sent to the user with a link to the google sheet</br>
+			Next I used the Google sheets API and the Google drive API to create a public sheet which will fill in the results of each simulation in real time</br>
+			Finally an email will be sent to the user with a link to the Google sheet</br>
 		</p>
 		<h2>Return email - AWS SES</h2>
 		<p>
@@ -694,10 +715,15 @@ table.visible{
 		</br>
 		<h2>Localization and target movement for 2019 FRC competition</h2>
 		<p>
-			ROS used to localize the robot when near a goal as to drive up to the goal and place an object in the goal.
+			ROS used to localize the robot and to drive up to the goal.
 			Below are images of possible goals and environments.
 		</p>
-		<img src="images/ros/hatch.jpg" >
+		<img src="images/ros/hatch.jpg" width="30%">
+		</br></br>
+		<h2>Code breakdown:</h2>
+		<a href="https://github.com/Team41Robotics/deep_space/tree/master/src" target="_blank">
+			Check out the code on Github for reference.
+		</a>
 		<h3>Lidar</h3>		
 		<p>
 			Lidar data used to estimate a line in region of interest. Angle of line is used to adjust the camera (which is mounted on a servo) such that the camera is always facing the target.
@@ -705,19 +731,21 @@ table.visible{
 		<img src="images/ros/filter_scan.jpg" width="50%">
 		<h3>Vision</h3>		
 		<p>
-			OpenCV was used to find the correct tapes on the target.
+			OpenCV was used to find the correct markers on the target.
 		</p>
 		<img src="images/ros/vision.jpg" width="30%">
-		<h3>Vision Estimation</h3>		
+		<h3>Novel Vision Estimation Algorithm</h3>
+		<p>
+			Using pinhole camera model, created an overdetermined system with the live data returned by OpenCV and least mean squares filter to estimate distance and offset to target. 
+		</p>	
 		<h3>Transforms</h3>		
+		<p>
+			Simple linear algebra used to convert the transform from the camera and the target (distance and offset determined by estimator) to the transform from the robot to the target.
+		</p>	
 		<img src="images/ros/rviz_full.jpg" width="30%">
 		<img src="images/ros/tf.jpg" width="30%">
 		<h3>Move base</h3>		
 		<img src="images/ros/robot.jpg" width="30%">
-		</br></br>
-		<a href="https://github.com/Team41Robotics/deep_space/tree/master/src" target="_blank">
-			Check out the code on github.
-		</a>
 		</br></br>
 	</div>
 </div>
